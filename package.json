@@ -2,12 +2,14 @@
     "scripts": {
         "prettier": "prettier worker.ts web.ts reminder.ts classes/*.ts --write",
         "typescript": "tsc --p tsconfig.json",
-        "dev": "npm run prettier && npm run typescript && heroku local",
+        "dev": ". ./ .keys && npm run prettier && npm run typescript && heroku local",
         "web": "node web.js",
         "worker": "node worker.js",
         "reminder": "node reminder.js"
     },
     "dependencies": {
+        "dotenv": "^16.0.1",
+        "dotenv-expand": "^8.0.3",
         "moment": "^2.29.4",
         "needle": "^2.3.3",
         "pg": "^8.7.1",
